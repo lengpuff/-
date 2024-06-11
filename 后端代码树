@@ -1,0 +1,104 @@
+基于Spring Boot框架这个结构包括了用户管理、小说管理、评论与互动、收费模式等核心功能模块
+
+后端代码树
+
+
+novel-reading-platform/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── yourcompany/
+│   │   │           └── novelplatform/
+│   │   │               ├── NovelReadingPlatformApplication.java
+│   │   │               ├── config/
+│   │   │               │   ├── SwaggerConfig.java
+│   │   │               │   ├── WebSecurityConfig.java
+│   │   │               │   └── ...
+│   │   │               ├── controller/
+│   │   │               │   ├── UserController.java
+│   │   │               │   ├── NovelController.java
+│   │   │               │   ├── ChapterController.java
+│   │   │               │   ├── CommentController.java
+│   │   │               │   └── ...
+│   │   │               ├── dto/
+│   │   │               │   ├── UserDTO.java
+│   │   │               │   ├── NovelDTO.java
+│   │   │               │   ├── ChapterDTO.java
+│   │   │               │   ├── CommentDTO.java
+│   │   │               │   └── ...
+│   │   │               ├── entity/
+│   │   │               │   ├── User.java
+│   │   │               │   ├── Novel.java
+│   │   │               │   ├── Chapter.java
+│   │   │               │   ├── Comment.java
+│   │   │               │   └── ...
+│   │   │               ├── exception/
+│   │   │               │   ├── CustomException.java
+│   │   │               │   └── GlobalExceptionHandler.java
+│   │   │               ├── mapper/
+│   │   │               │   ├── UserMapper.java
+│   │   │               │   ├── NovelMapper.java
+│   │   │               │   ├── ChapterMapper.java
+│   │   │               │   ├── CommentMapper.java
+│   │   │               │   └── ...
+│   │   │               ├── repository/
+│   │   │               │   ├── UserRepository.java
+│   │   │               │   ├── NovelRepository.java
+│   │   │               │   ├── ChapterRepository.java
+│   │   │               │   ├── CommentRepository.java
+│   │   │               │   └── ...
+│   │   │               ├── service/
+│   │   │               │   ├── UserService.java
+│   │   │               │   ├── NovelService.java
+│   │   │               │   ├── ChapterService.java
+│   │   │               │   ├── CommentService.java
+│   │   │               │   ├── PaymentService.java
+│   │   │               │   └── ...
+│   │   │               ├── util/
+│   │   │               │   ├── JwtUtil.java
+│   │   │               │   ├── PasswordUtil.java
+│   │   │               │   ├── TranslationUtil.java
+│   │   │               │   └── ...
+│   │   │               └── vo/
+│   │   │                   ├── UserVO.java
+│   │   │                   ├── NovelVO.java
+│   │   │                   ├── ChapterVO.java
+│   │   │                   ├── CommentVO.java
+│   │   │                   └── ...
+│   │   ├── resources/
+│   │   │   ├── application.properties
+│   │   │   ├── application-dev.properties
+│   │   │   ├── application-prod.properties
+│   │   │   └── ...
+│   │   └── webapp/
+│   │       ├── WEB-INF/
+│   │       └── ...
+│   └── test/
+│       ├── java/
+│       │   └── com/
+│       │       └── yourcompany/
+│       │           └── novelplatform/
+│       │               ├── UserServiceTests.java
+│       │               ├── NovelServiceTests.java
+│       │               └── ...
+│       └── resources/
+│           └── ...
+└── pom.xml
+```
+
+目录说明
+
+1. config/: 配置文件，包括Swagger配置、Web安全配置等。
+2. controller/: 控制器层，处理HTTP请求。
+3. dto/: 数据传输对象，用于在服务层和控制器层之间传递数据。
+4. entity/: 实体类，与数据库表对应。
+5. exception/: 异常处理类，包括自定义异常和全局异常处理器。
+6. mapper/: MyBatis映射器接口，用于定义SQL操作。
+7. repository/: 数据访问层，使用Spring Data JPA操作数据库。
+8. service/: 服务层，包含业务逻辑。
+9. util/: 工具类，包含JWT、密码加密等工具。
+10. vo/: 视图对象，用于在控制器层和前端之间传递数据。
+11. resources/: 配置文件和静态资源。
+12. test/: 单元测试和集成测试。
+
