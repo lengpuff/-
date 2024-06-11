@@ -22,13 +22,14 @@ Jenkins是开源CI&CD软件领导者， 提供超过1000个插件来支持构建
 https://www.jenkins.io/zh/
 ---------------------------------
 
+=================================
 
 
 
 
 技术栈：
 - 前端：Vue.js, Vue Router, Vuex, Element Plus, Axios
-- 后端：Spring Boot, Spring Security, JPA/Hibernate, MySQL
+- 后端：Spring Boot, Spring Security, JPA/Hibernate（？）, MySQL
 - 工具：Git, Maven, Swagger, Docker（会用到吗？？）, Jenkins
 
  项目功能：
@@ -37,7 +38,7 @@ https://www.jenkins.io/zh/
 3. 小说阅读：章节阅读、书签管理、阅读进度同步、夜间模式、字体设置、封面展示
 4. 小说管理：发布、编辑、删除小说（作者权限）
 5. 评论和点赞：用户评论和点赞功能
-6. 收费模式：章节订阅制、买断小说制、章节订阅制
+6. 收费模式：章节订阅制、买断小说制
 7. 英文小说生词翻译和字典功能
 8. 系统管理：小说审核、用户管理、内容管理（管理员权限）
 
