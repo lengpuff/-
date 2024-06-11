@@ -1,0 +1,216 @@
+
+项目名称：在线小说阅读平台
+
+=================================
+所有网址(更新中)
+---------------------------------
+Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式 + 库。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。https://vuex.vuejs.org/zh/
+---------------------------------
+Vue 是一款用于构建用户界面的 JavaScript 框架。它基于标准 HTML、CSS 和 JavaScript 构建，并提供了一套声明式的、组件化的编程模型，帮助你高效地开发用户界面。
+https://cn.vuejs.org/guide/introduction.html
+---------------------------------
+Element Plus
+https://element-plus.org/zh-CN/
+---------------------------------
+
+
+
+
+
+技术栈：
+- 前端：Vue.js, Vue Router, Vuex, Element Plus, Axios
+- 后端：Spring Boot, Spring Security, JPA/Hibernate, MySQL
+- 工具：Git, Maven, Swagger, Docker, Jenkins
+
+ 项目功能：
+1. 用户管理：注册、登录、角色权限管理（普通用户、作者、管理员）
+2. 小说浏览：分类浏览、搜索、推荐、排行榜
+3. 小说阅读：章节阅读、书签管理、阅读进度同步、夜间模式、字体设置、封面展示
+4. 小说管理：发布、编辑、删除小说（作者权限）
+5. 评论和点赞：用户评论和点赞功能
+6. 收费模式：章节订阅制、买断小说制、章节订阅制
+7. 英文小说生词翻译和字典功能
+8. 系统管理：小说审核、用户管理、内容管理（管理员权限）
+
+时间安排和任务划分：
+
+ 第1周：项目立项😃
+- 产出：立项文档（背景，价值）😃
+- 任务：
+  - 确定项目需求和目标。😃
+  - 准备项目的基础结构和技术栈选择。  😃
+  - 创建项目的 Git 仓库并初始化前后端项目结构。😃
+
+第2周：需求分析
+- 产出：需求及原型文档（重点描述需要完成的功能）😃
+- 任务：
+  - 详细分析用户需求，创建需求文档。🤔 <-----------------------🤣😎💥2024/6/11(第一周)我在这里💥😎🤣
+  - 使用工具（如Figma或Sketch）制作原型图。🤔
+  - 确定数据库设计和基本API接口。🤔
+
+第3周：接口和表设计
+- 产出：接口和表设计（核心业务表和接口设计）
+- 任务：
+  - 设计数据库表结构，创建数据库。
+  - 定义后端的API接口，使用Swagger生成接口文档。
+  - 前端和后端的基本通信测试（如用户登录接口）。
+
+第4周：架构及分工设计
+- 产出：架构设计，技术选型，开发计划
+- 任务：
+  - 确定前后端项目架构和技术栈。
+  - 制定详细的开发计划和任务分工。
+  - 搭建前端基础框架和后端基础框架。
+
+第5-7周：代码实现
+- 产出：功能代码及FAQ和BUG分析文档
+- 任务：
+  - 前端：
+    - 用户注册、登录、个人信息管理页面开发。
+    - 小说浏览和分类页面开发。
+    - 小说阅读页面开发，包含书签管理、阅读进度同步、夜间模式、字体设置、封面展示功能。
+    - 评论和点赞功能开发。
+    - 作者发布、编辑、删除小说页面开发。
+    - 管理员审核、管理小说和用户页面开发。
+    - 英文小说阅读页面的生词翻译和字典功能。
+  - 后端：
+    - 实现用户模块（注册、登录、权限管理）。
+    - 实现小说模块（发布、编辑、删除、浏览、搜索）。
+    - 实现评论和点赞模块。
+    - 实现收费模式的相关功能。
+    - 实现管理员模块（审核、管理小说和用户）。
+  - 持续集成和持续部署（CI/CD）设置。
+
+第8周：联调及部署
+- 产出：测试报告及项目部署文档（CI/CD）
+- 任务：
+  - 前后端联调，确保接口正确。
+  - 编写单元测试和集成测试。
+  - 配置和优化Docker容器化部署。
+  - 编写部署文档和测试报告。
+
+第9周：项目总结和展示
+- 产出：项目介绍PPT，视频，代码
+- 任务：
+  - 制作项目介绍PPT，涵盖项目背景、功能实现、技术选型和开发过程。
+  - 录制项目演示视频，展示项目的主要功能。
+  - 确保所有代码上传到Git仓库，附带README文档和安装使用说明。
+
+
+
+数据库表设计示例
+- 用户表（user）
+  - id (Long)
+  - username (String)
+  - password (String)
+  - email (String)
+  - phone (String)
+  - age (Integer)
+  - gender (String)
+  - create_time (Date)
+  - update_time (Date)
+  - status (String)
+  - role (String)
+
+- 小说表（novel）
+  - id (Long)
+  - title (String)
+  - author_id (Long, 外键   引用用户表)
+  - category (String)
+  - description (Text)
+  - cover (String, 封面图片URL)
+  - create_time (Date)
+  - update_time (Date)
+  - status (String)
+  - is_paid (Boolean, 是否付费)
+  - price (Decimal, 小说价格)
+
+- 章节表（chapter）
+  - id (Long)
+  - novel_id (Long, 外键   引用小说表)
+  - title (String)
+  - content (Text)
+  - create_time (Date)
+  - update_time (Date)
+  - status (String)
+  - is_paid (Boolean, 是否付费)
+  - price (Decimal, 章节价格)
+
+- 评论表（comment）
+  - id (Long)
+  - novel_id (Long, 外键   引用小说表)
+  - user_id (Long, 外键   引用用户表)
+  - content (Text)
+  - rating (Integer)
+  - create_time (Date)
+  - update_time (Date)
+  - status (String)
+
+- 点赞表（like）
+  - id (Long)
+  - novel_id (Long, 外键   引用小说表)
+  - user_id (Long, 外键   引用用户表)
+  - create_time (Date)
+
+前端页面细节
+- 小说阅读页面
+  - 功能：
+    - 章节内容显示
+    - 书签管理
+    - 阅读进度同步
+    - 夜间模式切换
+    - 字体颜色和大小设置
+    - 小说封面展示
+    - 生词翻译和字典功能（英文小说）
+  - 实现：
+    - 使用Vuex管理阅读设置（夜间模式、字体颜色、大小）
+    - 使用本地存储或云存储同步阅读进度和书签
+    - 使用第三方翻译API（如Google翻译API）实现生词翻译
+    - 集成字典API（如Oxford Dictionaries API）实现字典功能
+
+```sql
+-- 插入示例数据
+INSERT INTO user (id, username, password, email, phone, age, gender, create_time, update_time, status, role) VALUES
+(1, 'user1', 'password1', 'user1@example.com', '1234567890', 25, 'male', NOW(), NOW(), 'active', 'user'),
+(2, 'author1', 'password2', 'author1@example.com', '0987654321', 30, 'female', NOW(), NOW(), 'active', 'author'),
+(3, 'admin1', 'password3', 'admin1@example.com', '1122334455', 35, 'male', NOW(), NOW(), 'active', 'admin');
+
+INSERT INTO novel (id, title, author_id, category, description, cover, create_time, update_time, status, is_paid, price) VALUES
+(1, 'Novel1', 2, 'Fantasy', 'A great fantasy novel', '/path/to/cover1.jpg', NOW(), NOW(), 'published', TRUE, 9.99),
+(2, 'Novel2', 2, 'Sci-Fi', 'A great sci-fi novel', '/path/to/cover2.jpg', NOW(), NOW(), 'published', FALSE, 0.00);
+
+INSERT INTO chapter (id, novel_id, title, content, create_time, update_time, status, is_paid, price) VALUES
+(1, 1, 'Chapter 1', 'Content of chapter 1', NOW(), NOW(), 'published', TRUE, 0.99),
+(2, 1, 'Chapter 2', 'Content of chapter 2', NOW(), NOW(), 'published', TRUE, 0.99),
+(3, 2, 'Chapter 1', 'Content of chapter 1', NOW(), NOW(), 'published', FALSE, 0.00);
+
+INSERT INTO comment (id, novel_id, user_id, content, rating, create_time, update_time, status) VALUES
+(1, 1, 1, 'Great novel!', 5, NOW(), NOW(), 'active'),
+(2, 2, 1, 'Interesting read', 4, NOW(), NOW(), 'active');
+
+INSERT INTO like (id, novel_id, user_id, create_time) VALUES
+(1, 1, 1, NOW()),
+(2, 2, 1, NOW());
+
+流程图示例
+1. 用户注册和登录
+2. 小说浏览和阅读
+3. 评论和点赞
+4. 支付和订阅
+
+
+
+前端组件设计
+- Header.vue：包含导航栏和用户信息
+- Footer.vue：包含版权信息和链接
+- Home.vue：展示推荐小说、分类浏览和排行榜
+- NovelDetail.vue：展示小说详细信息、章节列表和封面
+- ChapterRead.vue：章节阅读页面，包含夜间模式、字体设置、生词翻译和字典功能
+- UserProfile.vue：用户个人信息管理页面
+- AdminDashboard.vue：管理员后台管理页面
+
+项目管理
+
+（只有git了，我一个人一组）
+- 代码管理：使用Git进行版本控制，定期代码审查
+
