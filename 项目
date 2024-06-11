@@ -12,6 +12,15 @@ https://cn.vuejs.org/guide/introduction.html
 Element Plus
 https://element-plus.org/zh-CN/
 ---------------------------------
+谷歌翻译
+https://cloud.google.com/translate?hl=zh_cn
+---------------------------------
+Docker 可帮助开发人员随时随地构建、共享、运行和验证应用程序，而无需繁琐的环境配置或管理。
+https://www.docker.com/
+---------------------------------
+Jenkins是开源CI&CD软件领导者， 提供超过1000个插件来支持构建、部署、自动化， 满足任何项目的需要。
+https://www.jenkins.io/zh/
+---------------------------------
 
 
 
@@ -20,7 +29,7 @@ https://element-plus.org/zh-CN/
 技术栈：
 - 前端：Vue.js, Vue Router, Vuex, Element Plus, Axios
 - 后端：Spring Boot, Spring Security, JPA/Hibernate, MySQL
-- 工具：Git, Maven, Swagger, Docker, Jenkins
+- 工具：Git, Maven, Swagger, Docker（会用到吗？？）, Jenkins
 
  项目功能：
 1. 用户管理：注册、登录、角色权限管理（普通用户、作者、管理员）
@@ -52,7 +61,7 @@ https://element-plus.org/zh-CN/
 - 产出：接口和表设计（核心业务表和接口设计）
 - 任务：
   - 设计数据库表结构，创建数据库。
-  - 定义后端的API接口，使用Swagger生成接口文档。
+  - 定义后端的API接口，使用Swagger生成接口文档（？）。
   - 前端和后端的基本通信测试（如用户登录接口）。
 
 第4周：架构及分工设计
@@ -211,6 +220,6 @@ INSERT INTO like (id, novel_id, user_id, create_time) VALUES
 
 项目管理
 
-（只有git了，我一个人一组）
+（我一个人一组）
 - 代码管理：使用Git进行版本控制，定期代码审查
 
