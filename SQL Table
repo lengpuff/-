@@ -1,0 +1,91 @@
+-- 用户表
+CREATE TABLE user (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100),
+    phone VARCHAR(20),
+    age INT,
+    gender VARCHAR(10),
+    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    update_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    status VARCHAR(20),
+    role VARCHAR(20)
+);
+
+-- 小说表
+CREATE TABLE novel (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author_id BIGINT,
+    category VARCHAR(100),
+    description TEXT,
+    cover VARCHAR(255),
+    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    update_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    status VARCHAR(20),
+    is_paid BOOLEAN DEFAULT FALSE,
+    price DECIMAL(10, 2) DEFAULT 0.00,
+    FOREIGN KEY (author_id) REFERENCES user(id)
+);
+
+-- 章节表
+CREATE TABLE chapter (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    novel_id BIGINT,
+    title VARCHAR(255),
+    content TEXT,
+    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    update_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    status VARCHAR(20),
+    is_paid BOOLEAN DEFAULT FALSE,
+    price DECIMAL(10, 2) DEFAULT 0.00,
+    FOREIGN KEY (novel_id) REFERENCES novel(id)
+);
+
+-- 评论表
+CREATE TABLE comment (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    novel_id BIGINT,
+    user_id BIGINT,
+    content TEXT,
+    rating INT,
+    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    update_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    status VARCHAR(20),
+    FOREIGN KEY (novel_id) REFERENCES novel(id),
+    FOREIGN KEY (user_id) REFERENCES user(id)
+);
+
+-- 点赞表
+CREATE TABLE `like` (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    novel_id BIGINT,
+    user_id BIGINT,
+    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (novel_id) REFERENCES novel(id),
+    FOREIGN KEY (user_id) REFERENCES user(id)
+);
+
+-- 插入测试数据
+INSERT INTO user (username, password, email, phone, age, gender, status, role) VALUES
+('user1', 'password1', 'user1@example.com', '1234567890', 25, 'male', 'active', 'user'),
+('author1', 'password2', 'author1@example.com', '0987654321', 30, 'female', 'active', 'author'),
+('admin1', 'password3', 'admin1@example.com', '1122334455', 35, 'male', 'active', 'admin');
+
+INSERT INTO novel (title, author_id, category, description, cover, status, is_paid, price) VALUES
+('Novel1', 2, 'Fantasy', 'A great fantasy novel', '/path/to/cover1.jpg', 'published', TRUE, 9.99),
+('Novel2', 2, 'Sci-Fi', 'A great sci-fi novel', '/path/to/cover2.jpg', 'published', FALSE, 0.00);
+
+INSERT INTO chapter (novel_id, title, content, status, is_paid, price) VALUES
+(1, 'Chapter 1', 'Content of chapter 1', 'published', TRUE, 0.99),
+(1, 'Chapter 2', 'Content of chapter 2', 'published', TRUE, 0.99),
+(2, 'Chapter 1', 'Content of chapter 1', 'published', FALSE, 0.00);
+
+INSERT INTO comment (novel_id, user_id, content, rating, status) VALUES
+(1, 1, 'Great novel!', 5, 'active'),
+(2, 1, 'Interesting read', 4, 'active');
+
+INSERT INTO `like` (novel_id, user_id) VALUES
+(1, 1),
+(2, 1);
