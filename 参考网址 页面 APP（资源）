@@ -1,0 +1,71 @@
+
+
+### 设计灵感和界面参考
+
+1. **Dribbble** - 一个展示设计师作品的平台，可以找到很多移动端应用设计的灵感。
+   - [Dribbble](https://dribbble.com/tags/mobile_app)
+
+2. **Behance** - 设计师展示其项目的地方，包含了丰富的移动端应用设计案例。
+   - [Behance](https://www.behance.net/search/projects?search=mobile%20app)
+
+3. **Mobbin** - 收集了大量的优秀移动应用界面设计，分类详细，可以按需查找。
+   - [Mobbin](https://mobbin.com/browse/ios/apps)
+
+4. **Pinterest** - 设计灵感的宝库，可以找到各种类型的移动端应用设计。
+   - [Pinterest](https://www.pinterest.com/search/pins/?q=mobile%20app%20design&rs=typed)
+
+### 技术实现和开发文档
+
+1. **MDN Web Docs** - 提供全面的HTML、CSS和JavaScript文档。
+   - [MDN Web Docs](https://developer.mozilla.org/)
+
+2. **W3Schools** - 一个经典的学习和参考资源，涵盖了前端开发的基础知识。
+   - [W3Schools](https://www.w3schools.com/)
+
+3. **Vue.js 官方文档** - Vue.js 是一个渐进式 JavaScript 框架，非常适合开发现代化的前端应用。
+   - [Vue.js 官方文档](https://v3.vuejs.org/guide/)
+
+4. **Element Plus** - 基于 Vue 3 的 UI 组件库，非常适合快速搭建现代化的前端应用。
+   - [Element Plus](https://element-plus.org/)
+
+5. **Axios** - 一个基于 Promise 的 HTTP 库，用于发送 AJAX 请求。
+   - [Axios](https://axios-http.com/)
+
+### 实现特定功能的参考
+
+1. **夜间模式和主题切换** - 通过切换CSS变量或使用第三方库实现。
+   - [如何实现夜间模式](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/)
+
+2. **字体和样式自定义** - 使用CSS和JavaScript动态改变字体和样式。
+   - [动态改变字体和样式](https://www.smashingmagazine.com/2016/04/web-fonts-performance/)
+
+3. **评论和点赞功能** - 参考常见社交媒体的评论实现。
+   - [评论和点赞功能设计参考](https://uxplanet.org/implementing-comments-and-likes-4b285a7b86a6)
+
+4. **内置翻译和字典功能** - 使用第三方翻译API，如Google Translate API。
+   - [使用翻译API实现内置翻译](https://cloud.google.com/translate/docs)
+
+### 图片和图标资源
+
+1. **Unsplash** - 提供免费高质量图片。
+   - [Unsplash](https://unsplash.com/)
+
+2. **Pexels** - 免费图片和视频素材网站。
+   - [Pexels](https://www.pexels.com/)
+
+3. **Icons8** - 免费的图标资源，支持多种格式。
+   - [Icons8](https://icons8.com/)
+
+4. **FontAwesome** - 提供丰富的图标库，可以用于Web项目中。
+   - [FontAwesome](https://fontawesome.com/)
+
+### 实际页面参考
+
+1. **Kindle App** - 亚马逊Kindle应用，作为电子书阅读器的经典代表，可以从中学习其阅读页面、目录结构和用户交互设计。
+   - [Kindle App on Google Play](https://play.google.com/store/apps/details?id=com.amazon.kindle)
+
+2. **阅文集团的起点阅读** - 作为中文网络小说的代表，起点阅读的设计和功能可以作为很好的参考。
+   - [起点阅读 on Google Play](https://play.google.com/store/apps/details?id=com.qidian.QDReader)
+
+3. **Webtoon** - 一个知名的漫画阅读平台，其移动端应用设计简洁现代，可以参考其UI设计和用户体验。
+   - [Webtoon App on Google Play](https://play.google.com/store/apps/details?id=com.naver.linewebtoon)
